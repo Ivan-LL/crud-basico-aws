@@ -1,20 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 import Obj1 from './component/Obj1';
-import { Fragment } from 'react';
+import { Component, Fragment } from 'react';
+import AContainer from './containers/AContainer';
 
-function App() {
-  return (
-  <Fragment>
-    <div>
-      <h1>Hola mundo.</h1>
-      <Obj1 nombre = {"ivan"} apellido={"llanos"} />
-    </div>
-    
-  </Fragment>
-  );
+class App extends Component {
+  render(){
+    return (
+      <Fragment>
+        <div>
+          <h1>Hola mundo.</h1>
+          <Obj1 nombre = {"ivan"} apellido={"llanos"} />
+          <AContainer />
+        </div>
+      </Fragment>
+    );
+  }
 }
-
-
 
 export default App;
