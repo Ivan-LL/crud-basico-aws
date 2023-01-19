@@ -32,7 +32,8 @@ class AContainer extends Component{
 
     render(){
         return(
-            <div>
+            <div style={{position:'absolute',top:'200px'}}>
+                <hr></hr>
                 {
                     this.state.isLoading ?
                         "cargando"

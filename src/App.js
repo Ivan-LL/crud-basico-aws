@@ -9,7 +9,7 @@ class App extends Component {
       <Fragment>
         <Home />
         
-        <hr></hr>
+        
         <AContainer />
       </Fragment>
     );
