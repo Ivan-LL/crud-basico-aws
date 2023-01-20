@@ -35,7 +35,7 @@ class AContainer extends Component{
                                 return(
                                     <div key={index}>
                                         <p>
-                                            {producto.IdProducto+" "+producto.color+" "+producto.precio}
+                                            <li>{producto.IdProducto+" "+producto.color+" "+producto.precio}</li>
                                         </p>
                                     </div>    
                                 )
