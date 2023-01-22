@@ -30,11 +30,11 @@ const Home=()=>{
     let editPrecio=useRef();
     let editColor=useRef();
 
-    const botonAgregar=()=>{
-      var idProducto = addId.current.value
-      var nombreProducto = addNombre.current.value
-      var precioProducto = addPrecio.current.value
-      var colorProducto = addColor.current.value
+    const botonEditar=()=>{
+      var idProducto = editId.current.value
+      var nombreProducto = editNombre.current.value
+      var precioProducto = editPrecio.current.value
+      var colorProducto = editColor.current.value
 
       console.log(idProducto)
       console.log(nombreProducto)
@@ -58,7 +58,7 @@ const Home=()=>{
             </div>
 
             <div>
-              <button style={{position:'absolute',left:'350px'}}>Editar</button>
+              <button style={{position:'absolute',left:'350px'}} onClick={botonEditar}>Editar</button>
               <input ref={editId} type="text" placeholder='id' style={{position:'absolute',top:'10px', left:'410px'}}/>
               <input ref={editNombre} type="text" placeholder='Nombre' style={{position:'absolute',top:'30px',left:'410px'}}/>
               <input ref={editPrecio} type="text" placeholder='precio' style={{position:'absolute',top:'50px', left:'410px'}}/>
