@@ -12,6 +12,8 @@ table = dynamodb.Table(dynamodbTableName)
 
 getMethod = 'GET'
 postMethod = 'POST'
+patchMethod = 'PATCH'
+deleteMethod = 'DELETE'
 
 estadoPath = '/estado'
 producto = '/producto'
