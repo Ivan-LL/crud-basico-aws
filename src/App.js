@@ -9,7 +9,6 @@ class App extends Component {
     return (
         <Fragment>
           <Home />
-            <hr></hr>
           <BrowserRouter>
             <Routes>
               <Route path="/listar_todo" element ={<AContainer />}/>
