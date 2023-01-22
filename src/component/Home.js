@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, {useRef} from "react";
 
 const Home=()=>{
@@ -8,16 +9,26 @@ const Home=()=>{
     let addColor=useRef();
   
     const botonAgregar=()=>{
-      var idProducto = addId.current.value
+      var idNuevoProducto = addId.current.value
       var nombreProducto = addNombre.current.value
       var precioProducto = addPrecio.current.value
       var colorProducto = addColor.current.value
 
-      console.log(idProducto)
+      
+
+        axios.post('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
+        idProduco:idNuevoProducto,
+        nombre:nombreProducto,
+        color:precioProducto,
+        precio:colorProducto
+      }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
+
+      console.log(idNuevoProducto)
       console.log(nombreProducto)
       console.log(precioProducto)
       console.log(colorProducto)
     }
+
 
     let deleteId=useRef();
     const botonEliminar=()=>{
@@ -42,6 +53,7 @@ const Home=()=>{
       console.log(colorProducto)
     }
 
+   
     return(
         <div>
             <div>

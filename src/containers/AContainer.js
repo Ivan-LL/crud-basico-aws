@@ -21,7 +21,7 @@ class AContainer extends Component{
             }
         })
     }
-
+    
     render(){
         return(
             <div style={{position:'absolute',top:'200px'}}>
@@ -35,7 +35,7 @@ class AContainer extends Component{
                                 return(
                                     <div key={index}>
                                         <p>
-                                            <li>{producto.IdProducto+" "+producto.color+" "+producto.precio}</li>
+                                            <li>{producto.IdProducto+" "+producto.nombre+" "+producto.color+" "+producto.precio}</li>
                                         </p>
                                     </div>    
                                 )
