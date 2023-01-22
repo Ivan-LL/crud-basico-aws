@@ -20,12 +20,27 @@ const Home=()=>{
     }
 
     let deleteId=useRef();
-
+    const botonEliminar=()=>{
+      var idProducto = deleteId.current.value
+      console.log(idProducto)
+    }
 
     let editId=useRef();
     let editNombre=useRef();
     let editPrecio=useRef();
     let editColor=useRef();
+
+    const botonAgregar=()=>{
+      var idProducto = addId.current.value
+      var nombreProducto = addNombre.current.value
+      var precioProducto = addPrecio.current.value
+      var colorProducto = addColor.current.value
+
+      console.log(idProducto)
+      console.log(nombreProducto)
+      console.log(precioProducto)
+      console.log(colorProducto)
+    }
 
     return(
         <div>
@@ -38,7 +53,7 @@ const Home=()=>{
             </div>
 
             <div>
-              <button style={{position:'absolute',top:'110px'}}>Eliminar</button>
+              <button style={{position:'absolute',top:'110px'}} onClick={botonEliminar} >Eliminar</button>
               <input ref={deleteId} type="text" placeholder='idEliminar'  style={{position:'absolute',top:'110px',left:'80px'}}/>
             </div>
 
