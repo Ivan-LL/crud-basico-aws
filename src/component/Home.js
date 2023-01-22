@@ -50,7 +50,9 @@ const Home=()=>{
               <input ref={editColor} type="text" placeholder='color' style={{position:'absolute',top:'70px', left:'410px'}}/>
               
             </div>
-
+            <div>
+              <button style={{position:'absolute',top:'140px'}}>Listar Todo</button>
+            </div>
         </div>
 
     );
