@@ -29,8 +29,12 @@ const Home=()=>{
 
   let deleteId=useRef();
   const botonEliminar=()=>{
-    var IdProducto = deleteId.current.value
-    console.log(IdProducto)
+    var borrarId = deleteId.current.value
+
+    axios.delete('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
+      IdProducto:borrarId,
+    }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
+    console.log(borrarId)
   }
 
   let editId=useRef();
