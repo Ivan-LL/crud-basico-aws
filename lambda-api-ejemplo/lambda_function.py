@@ -89,7 +89,7 @@ def modifyProduct(IdProducto, updateKey, updateValue):
     try:
         response = table.update_item(
             Key={
-                'IdProdcuto': IdProducto
+                'IdProducto': IdProducto
             },
             UpdateExpression='set %s =  :value' % updateKey,
             ExpressionAttributeValues={
@@ -100,7 +100,7 @@ def modifyProduct(IdProducto, updateKey, updateValue):
         body = {
             'Operation':'UPDATE',
             'Message': 'SUCCES',
-            'UpdatedAtrributes': response
+            'UpdatedAttributes': response
         }
         return buildResponse(200, body)
     except:
@@ -110,7 +110,7 @@ def deleteProduct(IdProducto):
     try:
         response = table.delete_item(
             Key={
-                'IdProdcuto': IdProducto
+                'IdProducto': IdProducto
             },
             ReturnValues='ALL_OLD'
         )
@@ -130,7 +130,9 @@ def buildResponse(statusCode, body=None):
         'statusCode': statusCode,
         'headers':{
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin':'*'
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,DELETE,PATCH'
         }
     }
     if body is not None:
