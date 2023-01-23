@@ -31,6 +31,12 @@ def lambda_handler(event, context):
         response = getProductos()
     elif httpMethod == postMethod and path == producto:
         response = saveProduct(json.loads(event['body']))
+    elif httpMethod == patchMethod and path == producto:
+        requestBody = json.loads(event['body'])
+        response = modifyProduct(requestBody['IdProducto'], requestBody['updateKey'], requestBody['updateValue'])
+    elif httpMethod == deleteMethod and path == producto:
+        requestBody = json.loads(event['body'])
+        response = deleteProduct(requestBody['IdProducto'])
     else:
         response = buildResponse(404, 'Not Found')
     
@@ -64,7 +70,7 @@ def getProductos():
         }
         return buildResponse(200, body)
     except:
-        logger.exception('Error logger exception') 
+        logger.exception('Error logger exception getProductos') 
 
 def saveProduct(requestBody):
     try:
@@ -73,6 +79,45 @@ def saveProduct(requestBody):
             'Operation':'SAVE',
             'Message': 'SUCCES',
             'Item': requestBody
+        }
+        return buildResponse(200, body)
+
+    except:
+        logger.exception('Error logger exception') 
+
+def modifyProduct(IdProducto, updateKey, updateValue):
+    try:
+        response = table.update_item(
+            Key={
+                'IdProdcuto': IdProducto
+            },
+            UpdateExpression='set %s =  :value' % updateKey,
+            ExpressionAttributeValues={
+                'value': updateValue
+            },
+            ReturnValues='UPDATED_NEW'
+        )
+        body = {
+            'Operation':'UPDATE',
+            'Message': 'SUCCES',
+            'UpdatedAtrributes': response
+        }
+        return buildResponse(200, body)
+    except:
+        logger.exception('Error logger exception') 
+
+def deleteProduct(IdProducto):
+    try:
+        response = table.delete_item(
+            Key={
+                'IdProdcuto': IdProducto
+            },
+            ReturnValues='ALL_OLD'
+        )
+        body = {
+            'Operation':'DELETE',
+            'Message': 'SUCCES',
+            'Item': response
         }
         return buildResponse(200, body)
 
