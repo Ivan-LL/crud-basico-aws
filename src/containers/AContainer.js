@@ -1,8 +1,9 @@
-import react, {Component, Fragment} from 'react';
+import react, {Component, Fragment, Reactable} from 'react';
 import axios from 'axios';
+import { FilterableTable } from 'react-filterable-table';
 
 class AContainer extends Component{
-
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -17,15 +18,35 @@ class AContainer extends Component{
             if(result.data){
                 
                 this.setState({productos:result.data.productos,isLoading:false})
-                console.log(result)
+                
             }
         })
     }
     
     render(){
+        const FilterableTable = require('react-filterable-table');
         return(
             <div style={{position:'absolute',top:'200px'}}>
+
                 <hr></hr>
+                <FilterableTable style={{"border": "1px solid black"}}
+                namespace="Productos"
+                initialSort="IdProducto"
+                data={this.state.productos}
+                fields={[
+                    { name: 'IdProducto', displayName: "id", inputFilterable: true, sortable: true },
+                    { name: 'nombre', displayName: "Nombre Producto", inputFilterable: false, sortable: true },
+                    { name: 'color', displayName: "Color producto", inputFilterable: false, sortable: true },
+                    { name: 'precio', displayName: "PrecioProducto", inputFilterable: false, sortable: true },
+                ]}
+                
+                />
+            </div>
+        )
+    }
+}
+export default AContainer;
+/*
                 {
                     this.state.isLoading ?
                         "cargando"
@@ -34,6 +55,7 @@ class AContainer extends Component{
                             (producto,index)=>{
                                 return(
                                     <div key={index}>
+                                        
                                         <p>
                                             <li>{producto.IdProducto+" "+producto.nombre+" "+producto.color+" "+producto.precio}</li>
                                         </p>
@@ -42,8 +64,4 @@ class AContainer extends Component{
                             }
                         )
                 }
-            </div>
-        )
-    }
-}
-export default AContainer;
+*/
