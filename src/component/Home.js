@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, {useRef} from "react";
+import { useState } from 'react';
+import ReactiveButton from 'reactive-button';
 
 const Home=()=>{
 
@@ -31,8 +33,10 @@ const Home=()=>{
   const botonEliminar=()=>{
     var borrarId = deleteId.current.value
 
-    axios.delete('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
-      IdProducto:borrarId,
+    axios.delete('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto?IdProducto=10004', {
+      
+      IdProducto: borrarId
+      
     }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
     console.log(borrarId)
   }
@@ -48,6 +52,13 @@ const Home=()=>{
     var precioProducto = editPrecio.current.value
     var colorProducto = editColor.current.value
 
+    axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
+      IdProducto:IdProducto,
+      nombre:nombreProducto,
+      precio:precioProducto,
+      color:colorProducto
+    }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
+
     console.log(IdProducto)
     console.log(nombreProducto)
     console.log(precioProducto)
@@ -56,30 +67,39 @@ const Home=()=>{
 
   return(
     <div>
+
+      <div style={{position:'absolute',top:'10px'}}>
+        <ReactiveButton size="small" color="dark" idleText="Agregar" onClick={botonAgregar}/>
+      </div>
       <div>
-        <button style={{position:'absolute'}} onClick={botonAgregar} >Agregar</button>
-        <input ref={addId} type="text" placeholder='idAgregar' style={{position:'absolute',top:'10px',left:'80px'}}/>
-        <input ref={addNombre} type="text" placeholder='NombreAgregar' style={{position:'absolute',top:'30px',left:'80px'}}/>
-        <input ref={addPrecio} type="text" placeholder='precioAgregar' style={{position:'absolute',top:'50px',left:'80px'}}/>
-        <input ref={addColor} type="text" placeholder='colorAgregar' style={{position:'absolute',top:'70px',left:'80px'}}/>
+        <input ref={addId} type="text" placeholder='idAgregar' style={{position:'absolute',top:'10px',left:'100px'}}/>
+        <input ref={addNombre} type="text" placeholder='NombreAgregar' style={{position:'absolute',top:'30px',left:'100px'}}/>
+        <input ref={addPrecio} type="text" placeholder='precioAgregar' style={{position:'absolute',top:'50px',left:'100px'}}/>
+        <input ref={addColor} type="text" placeholder='colorAgregar' style={{position:'absolute',top:'70px',left:'100px'}}/>
+      </div>
+
+      <div style={{position:'absolute',top:'110px'}}>
+      <ReactiveButton size="small" color="dark" idleText="Eliminar" onClick={botonEliminar}/>
+      </div>
+      <div style={{position:'absolute',top:'110px',left:'100px'}}>
+        <input ref={deleteId} type="text" placeholder='idEliminar'/>
+      </div>
+
+      <div style={{position:'absolute',left:'350px'}}>
+        <ReactiveButton size="small" color="dark" idleText="Editar" onClick={botonEditar}/>
       </div>
 
       <div>
-        <button style={{position:'absolute',top:'110px'}} onClick={botonEliminar} >Eliminar</button>
-        <input ref={deleteId} type="text" placeholder='idEliminar'  style={{position:'absolute',top:'110px',left:'80px'}}/>
-      </div>
-
-      <div>
-        <button style={{position:'absolute',left:'350px'}} onClick={botonEditar}>Editar</button>
-        <input ref={editId} type="text" placeholder='id' style={{position:'absolute',top:'10px', left:'410px'}}/>
-        <input ref={editNombre} type="text" placeholder='Nombre' style={{position:'absolute',top:'30px',left:'410px'}}/>
-        <input ref={editPrecio} type="text" placeholder='precio' style={{position:'absolute',top:'50px', left:'410px'}}/>
-        <input ref={editColor} type="text" placeholder='color' style={{position:'absolute',top:'70px', left:'410px'}}/>
+        <input ref={editId} type="text" placeholder='id' style={{position:'absolute',top:'10px', left:'430px'}}/>
+        <input ref={editNombre} type="text" placeholder='Nombre' style={{position:'absolute',top:'30px',left:'430px'}}/>
+        <input ref={editPrecio} type="text" placeholder='precio' style={{position:'absolute',top:'50px', left:'430px'}}/>
+        <input ref={editColor} type="text" placeholder='color' style={{position:'absolute',top:'70px', left:'430px'}}/>
         
       </div>
       <div>
-        <a style={{position:'absolute',top:'140px'}} href="/listar_todo">Listar Todo</a>
-        {/* <button style={{position:'absolute',top:'140px'}}>Listar Todo</button> */}
+        <a style={{position:'absolute',top:'160px'}} href="/listar_todo">
+          <ReactiveButton size="small" color="dark" idleText="Listar Todo" />
+        </a>
       </div>
     </div>
   );
