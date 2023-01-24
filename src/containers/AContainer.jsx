@@ -28,7 +28,7 @@ class AContainer extends Component{
     render(){
         const FilterableTable = require('react-filterable-table');
         return(
-            <div style={{position:'absolute',top:'200px'}}>
+            <div style={{position:'absolute',top:'200px',width:'100%'}}>
 
                 <hr></hr>
                 <FilterableTable style={{"border": "1px solid black"}}
