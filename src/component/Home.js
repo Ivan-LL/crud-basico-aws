@@ -18,13 +18,13 @@ const Home=()=>{
 
     axios.post('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
       IdProducto:idNuevoProducto,
-      nombre:nombreProducto,
+      //nombre:nombreProducto,
       precio:precioProducto,
       color:colorProducto
     }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
 
     console.log(idNuevoProducto)
-    console.log(nombreProducto)
+    //console.log(nombreProducto)
     console.log(precioProducto)
     console.log(colorProducto)
   }
@@ -33,10 +33,10 @@ const Home=()=>{
   const botonEliminar=()=>{
     var borrarId = deleteId.current.value
 
-    axios.delete('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto?IdProducto=10004', {
-      
+    axios.delete('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
+      data: {
       IdProducto: borrarId
-      
+      }
     }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
     console.log(borrarId)
   }
@@ -54,9 +54,9 @@ const Home=()=>{
 
     axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
       IdProducto:IdProducto,
-      nombre:nombreProducto,
-      precio:precioProducto,
-      color:colorProducto
+      updateKey:"precio",
+      updateValue:precioProducto
+
     }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
 
     console.log(IdProducto)
