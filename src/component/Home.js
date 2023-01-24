@@ -52,7 +52,7 @@ const Home=()=>{
     var precioProducto = editPrecio.current.value
     var colorProducto = editColor.current.value
 
-    axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
+    axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto/'+IdProducto, {
       IdProducto:IdProducto,
       nombre:nombreProducto,
       precio:precioProducto,

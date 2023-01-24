@@ -3,6 +3,7 @@ import { Component, Fragment } from 'react';
 import AContainer from './containers/AContainer';
 import Home from './component/Home'
 import{BrowserRouter, Route, Routes} from "react-router-dom";
+import Tabla from './component/Tabla'
 //path="/listar_todo" element =
 class App extends Component {
   render(){
@@ -11,7 +12,7 @@ class App extends Component {
           <Home />
           <BrowserRouter>
             <Routes>
-              <Route path="/listar_todo" element ={<AContainer />}/>
+              <Route path="/listar_todo" element ={<AContainer/>}/>
               
             
             </Routes>
