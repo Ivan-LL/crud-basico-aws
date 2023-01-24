@@ -33,7 +33,7 @@ def lambda_handler(event, context):
         response = saveProduct(json.loads(event['body']))
     elif httpMethod == patchMethod and path == producto:
         requestBody = json.loads(event['body'])
-        response = modifyProduct(requestBody['IdProducto'], requestBody['updateKey'], requestBody['updateValue'])
+        response = modifyProduct(str(requestBody['IdProducto'], requestBody['updateKey'], requestBody['updateValue']))
     elif httpMethod == deleteMethod and path == producto:
         requestBody = json.loads(event['body'])
         response = deleteProduct(requestBody['IdProducto'])
