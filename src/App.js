@@ -8,6 +8,9 @@ class App extends Component {
   render(){
     return (
         <Fragment>
+          <div style={{"height":"50px","width":"100%","background-color":"#555"}}>
+            <h2> LISTADO DE PRODUCTOS</h2>
+          </div>
           <Home />
           <BrowserRouter>
             <Routes>
