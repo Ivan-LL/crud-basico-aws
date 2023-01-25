@@ -13,7 +13,7 @@ class App extends Component {
     return (
         <Fragment>
           <div style={{"height":"150.844px","width":"100%","background-color":"#11A2F5","display": "flex","align-items":"center","justify-content":'space-evenly'}}>
-            <h2 style={{"text-align":"center",top:"150px"}}> LISTADO DE PRODUCTOS</h2>
+             <a href="/"> <h2 style={{"text-align":"center",top:"150px"}}>LISTADO DE PRODUCTOS</h2> </a>
           </div>
           <div style={{"height":"70.844px","width":"100%","background-color":"#000000","display": "flex","align-items":"center","justify-content":'space-evenly'}}>
           <a href="/listar_todo"><ReactiveButton size="small" color="dark" idleText="Lista productos" /></a>
