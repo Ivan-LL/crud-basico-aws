@@ -1,7 +1,6 @@
 import react, {Component, createElement, Fragment} from 'react';
 import axios from 'axios';
 import { FilterableTable } from 'react-filterable-table';
-import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
 import 'rsuite-table/lib/less/index.less'; // or 'rsuite-table/dist/css/rsuite-table.css'
 import ReactiveButton from 'reactive-button';
 import{BrowserRouter, Route, Routes,Link, Outlet} from "react-router-dom";
