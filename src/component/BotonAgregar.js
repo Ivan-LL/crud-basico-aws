@@ -39,7 +39,7 @@ const BotonAgregar=()=>{
         nombre:nombreProducto,
         precio:precioProducto,
         color:colorProducto
-        }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
+        }).then(alert("Producto agregado correctamente")).then(res=>document.location.reload());
     
         }
         console.log(idNuevoProducto)
@@ -47,7 +47,9 @@ const BotonAgregar=()=>{
         console.log(precioProducto)
         console.log(colorProducto)
         
-        document.location.reload()
+        if(puede_seguir==false){
+            document.location.reload();
+        }
       }
 
       return(
