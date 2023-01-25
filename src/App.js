@@ -3,6 +3,7 @@ import { Component, Fragment } from 'react';
 import AContainer from './containers/AContainer';
 import ReactiveButton from 'reactive-button';
 import Home from './component/Home'
+import BotonEditar from './component/BotonEditar'
 import BotonEliminar from './component/BotonEliminar'
 import BotonAgregar from './component/BotonAgregar'
 import{BrowserRouter, Route, Routes,Link} from "react-router-dom";
@@ -26,6 +27,7 @@ class App extends Component {
           <Route path="listar_todo" element={<AContainer/>}>
               <Route path="BotonAgregar" element={<BotonAgregar/>}/>
               <Route path="BotonEliminar" element={<BotonEliminar/>}/>
+              <Route path="BotonEditar" element={<BotonEditar/>}/>
           </Route>
           
 

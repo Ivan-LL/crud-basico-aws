@@ -53,7 +53,7 @@ class AContainer extends Component{
             </div>
             <Button as={Link} to="BotonAgregar">Agregar</Button>            
             <Button as={Link} to="BotonEliminar">Eliminar</Button>
-            <Button>Editar</Button>
+            <Button as={Link} to="BotonEditar">Editar</Button>
             
             <div>
             <Outlet/>
