@@ -18,13 +18,13 @@ const Home=()=>{
 
     axios.post('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
       IdProducto:idNuevoProducto,
-      //nombre:nombreProducto,
+      nombre:nombreProducto,
       precio:precioProducto,
       color:colorProducto
     }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
 
     console.log(idNuevoProducto)
-    //console.log(nombreProducto)
+    console.log(nombreProducto)
     console.log(precioProducto)
     console.log(colorProducto)
   }
@@ -65,23 +65,25 @@ const Home=()=>{
     console.log(colorProducto)
   }
 
+
+
   return(
     <div>
 
-      <div style={{position:'absolute',top:'10px'}}>
+      <div style={{position:'absolute',top:'80px'}}>
         <ReactiveButton size="small" color="dark" idleText="Agregar" onClick={botonAgregar}/>
       </div>
       <div>
-        <input ref={addId} type="text" placeholder='idAgregar' style={{position:'absolute',top:'10px',left:'100px'}}/>
-        <input ref={addNombre} type="text" placeholder='NombreAgregar' style={{position:'absolute',top:'30px',left:'100px'}}/>
-        <input ref={addPrecio} type="text" placeholder='precioAgregar' style={{position:'absolute',top:'50px',left:'100px'}}/>
-        <input ref={addColor} type="text" placeholder='colorAgregar' style={{position:'absolute',top:'70px',left:'100px'}}/>
+        <input ref={addId} type="text" placeholder='idAgregar' style={{position:'absolute',top:'80px',left:'100px'}}/>
+        <input ref={addNombre} type="text" placeholder='NombreAgregar' style={{position:'absolute',top:'100px',left:'100px'}}/>
+        <input ref={addPrecio} type="text" placeholder='precioAgregar' style={{position:'absolute',top:'120px',left:'100px'}}/>
+        <input ref={addColor} type="text" placeholder='colorAgregar' style={{position:'absolute',top:'140px',left:'100px'}}/>
       </div>
 
-      <div style={{position:'absolute',top:'110px'}}>
+      <div style={{position:'absolute',top:'180px'}}>
       <ReactiveButton size="small" color="dark" idleText="Eliminar" onClick={botonEliminar}/>
       </div>
-      <div style={{position:'absolute',top:'110px',left:'100px'}}>
+      <div style={{position:'absolute',top:'180px',left:'100px'}}>
         <input ref={deleteId} type="text" placeholder='idEliminar'/>
       </div>
 
@@ -97,7 +99,7 @@ const Home=()=>{
         
       </div>
       <div>
-        <a style={{position:'absolute',top:'160px'}} href="/listar_todo">
+        <a style={{position:'absolute',top:'250px'}} href="/listar_todo">
           <ReactiveButton size="small" color="dark" idleText="Listar Todo" />
         </a>
       </div>

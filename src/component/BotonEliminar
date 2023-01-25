@@ -1,0 +1,5 @@
+const BotonEliminar = () =>{
+
+}
+
+export default BotonEliminar;
