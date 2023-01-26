@@ -17,13 +17,13 @@ class App extends Component {
         <Fragment>
           <div style={{"height":"150.844px","width":"100%","background-color":"#11A2F5","display": "flex","justify-content":'space-evenly'}}>
 
-             <a href="/"> <Button style={{width:"200vh",height:"15.8vh"}}> LISTADO DE PRODUCTOS </Button> </a>
+             <a href="/"> <Button style={{width:"200vh",height:"150.844px"}}> LISTADO DE PRODUCTOS </Button> </a>
              
           </div>
           <div style={{"height":"70.844px","width":"100%","background-color":"#000000","display": "flex","align-items":"center","justify-content":'space-evenly'}}>
-          <a href="/listar_todo"><ReactiveButton size="small" color="dark" idleText="Lista productos" /></a>
-          <a href="/contacto"><ReactiveButton size="small" color="dark" idleText="Contacto"/></a>
-          <a href="/informacion"><ReactiveButton size="small" color="dark" idleText="Información"/></a>
+            <a href="/listar_todo"><ReactiveButton size="small" color="dark" idleText="Lista productos" /></a>
+            <a href="/contacto"><ReactiveButton size="small" color="dark" idleText="Contacto"/></a>
+            <a href="/informacion"><ReactiveButton size="small" color="dark" idleText="Información"/></a>
           </div>
           <BrowserRouter>
           
