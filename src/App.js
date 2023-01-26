@@ -28,6 +28,8 @@ class App extends Component {
           
           <Routes>
 
+          <Route path="/" element={<Home/>}/> 
+
           <Route path="listar_todo" element={<AContainer/>}>
               <Route path="BotonAgregar" element={<BotonAgregar/>}/>
               <Route path="BotonEliminar" element={<BotonEliminar/>}/>
