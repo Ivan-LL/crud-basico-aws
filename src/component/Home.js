@@ -4,107 +4,46 @@ import { useState } from 'react';
 import ReactiveButton from 'reactive-button';
 
 const Home=()=>{
-
-  let addId=useRef();
-  let addNombre=useRef();
-  let addPrecio=useRef();
-  let addColor=useRef();
-
-  const botonAgregar=()=>{
-    var idNuevoProducto = addId.current.value
-    var nombreProducto = addNombre.current.value
-    var precioProducto = addPrecio.current.value
-    var colorProducto = addColor.current.value
-
-    axios.post('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
-      IdProducto:idNuevoProducto,
-      nombre:nombreProducto,
-      precio:precioProducto,
-      color:colorProducto
-    }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
-
-    console.log(idNuevoProducto)
-    console.log(nombreProducto)
-    console.log(precioProducto)
-    console.log(colorProducto)
-  }
-
-  let deleteId=useRef();
-  const botonEliminar=()=>{
-    var borrarId = deleteId.current.value
-
-    axios.delete('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', {
-      data: {
-      IdProducto: borrarId
-      }
-    }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
-    console.log(borrarId)
-  }
-
-  let editId=useRef();
-  let editNombre=useRef();
-  let editPrecio=useRef();
-  let editColor=useRef();
-
-  const botonEditar=()=>{
-    var IdProducto = editId.current.value
-    var nombreProducto = editNombre.current.value
-    var precioProducto = editPrecio.current.value
-    var colorProducto = editColor.current.value
-
-    axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto/'+IdProducto, {
-      IdProducto:IdProducto,
-      updateKey:"precio",
-      updateValue:precioProducto
-
-    }).then(res=>console.log('Posting data',res)).catch(err=>console.log(err));
-
-    console.log(IdProducto)
-    console.log(nombreProducto)
-    console.log(precioProducto)
-    console.log(colorProducto)
-  }
-
-
-
-  return(
-    <div>
-
-      <div style={{position:'absolute',top:'80px'}}>
-        <ReactiveButton size="small" color="dark" idleText="Agregar" onClick={botonAgregar}/>
-      </div>
+    return(
       <div>
-        <input ref={addId} type="text" placeholder='idAgregar' style={{position:'absolute',top:'80px',left:'100px'}}/>
-        <input ref={addNombre} type="text" placeholder='NombreAgregar' style={{position:'absolute',top:'100px',left:'100px'}}/>
-        <input ref={addPrecio} type="text" placeholder='precioAgregar' style={{position:'absolute',top:'120px',left:'100px'}}/>
-        <input ref={addColor} type="text" placeholder='colorAgregar' style={{position:'absolute',top:'140px',left:'100px'}}/>
-      </div>
+           <div style={{position:'absolute',left:'160px',top:'250px'}}>
+        <p>
+          <h1 style={{fontSize:"25px"}}>Pagina acerca del listado de productos</h1>
+        </p>
+        <p><i>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lorem libero, 
+        <br></br>placerat eget tincidunt in, gravida nec elit. Vestibulum vulputate
+        <br></br>id est et laoreet. Fusce posuere sem nisl, nec ullamcorper est viverra non. 
+        <br></br>Donec condimentum velit sed nunc fringilla, id porttitor arcu fringilla. 
+        <br></br>In hac habitasse platea dictumst. Phasellus sit amet turpis sit amet nisl. 
+        <br></br>Nullam ligula felis, interdum ut egestas ut, tempor id turpisnunc aliquet. 
+        <br></br>taciti blandit arcu metus nunc aliquet eget torquent facilisi, varius. 
+        <br></br>dignissim magnis diam hendrerit morbi fringilla risus. Congue magna 
+        <br></br>praesent ad nostra lobortis bibendum dignissim at eget felis in tellus
+        <br></br>sollicitudin dapibus,Est vel magnis imperdiet nam parturient suscipit 
+        <br></br>dapibus mollis tortor rutrum, orci neque senectus odio facilisis gravida 
+        <br></br>eleifend habitasse quisque convallis et, suspendisse lobortis cras tristique 
+        <br></br>ultricies accumsan mauris facilisi diam. Velit facilisis et pellentesque dui 
+        <br></br>maecenas facilisi morbi mauris curae pulvinar platea mattis odio, imperdiet nunc 
+        <br></br>enim egestas est sociis a inceptos volutpat conubia rhoncus.
+        <br></br>Sed sagittis nisl libero, id elementum justo placerat a. Aenean congue, elit 
+        <br></br>eu lobortis commodo, massa sapien vestibulum sem, id euismod velit augue 
+        <br></br>vel lacus. Nam non tempor lectus. Quisque lobortis lorem non egestas luctus. 
+        <br></br>Quisque nulla odio, gravida et pulvinar ut, faucibus sed neque. Interdum et 
+        <br></br>malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada fames ac 
+        <br></br>ante ipsum primis in faucibus. Nullam aliquam mi quis magna accumsan, 
+        <br></br>nec lobortis purus mollis. Donec ut neque libero.
+        </i></p>
+        <br></br><br></br>
+        <img src="caja.jpg" alt="caja" style={{width:'300px', height:'200px', position:'absolute', left:'85px'}} />
+        </div>
 
-      <div style={{position:'absolute',top:'180px'}}>
-      <ReactiveButton size="small" color="dark" idleText="Eliminar" onClick={botonEliminar}/>
+        <div style={{position:'absolute',left:'900px',top:'355px'}}>
+          <img src="imagenrelleno.png" style={{width:'800px',height:'1450x'}} />
+        </div>
       </div>
-      <div style={{position:'absolute',top:'180px',left:'100px'}}>
-        <input ref={deleteId} type="text" placeholder='idEliminar'/>
-      </div>
-
-      <div style={{position:'absolute',left:'350px'}}>
-        <ReactiveButton size="small" color="dark" idleText="Editar" onClick={botonEditar}/>
-      </div>
-
-      <div>
-        <input ref={editId} type="text" placeholder='id' style={{position:'absolute',top:'10px', left:'430px'}}/>
-        <input ref={editNombre} type="text" placeholder='Nombre' style={{position:'absolute',top:'30px',left:'430px'}}/>
-        <input ref={editPrecio} type="text" placeholder='precio' style={{position:'absolute',top:'50px', left:'430px'}}/>
-        <input ref={editColor} type="text" placeholder='color' style={{position:'absolute',top:'70px', left:'430px'}}/>
-        
-      </div>
-      <div>
-        <a style={{position:'absolute',top:'250px'}} href="/listar_todo">
-          <ReactiveButton size="small" color="dark" idleText="Listar Todo" />
-        </a>
-      </div>
-    </div>
-  );
+      
+    )
 }
 
 export default Home;
