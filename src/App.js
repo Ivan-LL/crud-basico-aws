@@ -8,13 +8,16 @@ import BotonEditar from './component/BotonEditar'
 import BotonEliminar from './component/BotonEliminar'
 import BotonAgregar from './component/BotonAgregar'
 import{BrowserRouter, Route, Routes,Link} from "react-router-dom";
+import { Button } from "react-bootstrap"
 //path="/listar_todo" element =
 class App extends Component {
   render(){
     return (
         <Fragment>
-          <div style={{"height":"150.844px","width":"100%","background-color":"#11A2F5","display": "flex","align-items":"center","justify-content":'space-evenly'}}>
-             <a href="/"> <h2 style={{"text-align":"center",top:"150px"}}>LISTADO DE PRODUCTOS</h2> </a>
+          <div style={{"height":"150.844px","width":"100%","background-color":"#11A2F5","display": "flex","justify-content":'space-evenly'}}>
+
+             <a href="/"> <Button style={{width:"200vh",height:"15.8vh"}}> LISTADO DE PRODUCTOS </Button> </a>
+             
           </div>
           <div style={{"height":"70.844px","width":"100%","background-color":"#000000","display": "flex","align-items":"center","justify-content":'space-evenly'}}>
           <a href="/listar_todo"><ReactiveButton size="small" color="dark" idleText="Lista productos" /></a>
