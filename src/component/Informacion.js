@@ -4,19 +4,64 @@ import ReactiveButton from 'reactive-button';
 const Informacion = () =>{
 
     return(
-
-        <div style={{position:'absolute',top:'225px',width:'100%'}}>
-            {/* <h3 style={{textAlign:'center'}}>¡Su opinión es importante para nosotros, por favor, contáctenos!</h3>
-            <h1 style={{position:'absolute',top:'205px',left:'680px', fontSize:'28px'}}>Nombre</h1>
-            <h1 style={{position:'absolute',top:'256px',left:'700px', fontSize:'28px'}}>e-mail</h1>
-            <h1 style={{position:'absolute',top:'308px',left:'675px', fontSize:'28px'}}>Mensaje</h1>
-            <input ref={campo_nombre} style={{position:'absolute',top:'230px',left:'790px'}}></input>
-            <input ref={campo_mail} style={{position:'absolute',top:'280px',left:'790px'}}></input>
-            <textarea ref={campo_msg} style={{position:'absolute',top:'330px',left:'790px'}} id="zonamsg" name="zonamsg" rows="6" cols="50">
-            </textarea>
-
-            <ReactiveButton style={{position:'relative',top:'425px',left:'925px', width:'100'}}  size='little' color="dark" idleText="Enviar" onClick={respuesta}/> */}
+      <div style={{position: 'absolute', "height":"150.844px","width":"100%","display": "flex","vertical-align": "top","justify-content":"center","textAlign":"justify"}}>
+        <div style={{background: 'aliceblue', padding: '15px', width: '400px',position:'relative'}}>
+          <p>
+            <h1 style={{fontSize:"25px"}}>Mi historia</h1>
+          </p>
+          <p style= {{fontSize:'15px'}}>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis eros nunc fringilla id rutrum nibh.
+          Orci convallis pulvinar urna fusce at purus neque nam leo? Suspendisse semper facilisi
+          parturient sit euismod placerat. Orci ante luctus praesent torquent orci commodo aptent blandit.
+          Placerat arcu dui potenti; nullam taciti taciti amet.
+          </p>
+          <p style= {{fontSize:'15px'}}>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis eros nunc fringilla id rutrum nibh.
+          Orci convallis pulvinar urna fusce at purus neque nam leo? Suspendisse semper facilisi
+          parturient sit euismod placerat. Orci ante luctus praesent torquent orci commodo aptent blandit.
+          Placerat arcu dui potenti; nullam taciti taciti amet.
+          </p>
+          <p style= {{fontSize:'15px'}}>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis eros nunc fringilla id rutrum nibh.
+          Orci convallis pulvinar urna fusce at purus neque nam leo? Suspendisse semper facilisi
+          parturient sit euismod placerat. Orci ante luctus praesent torquent orci commodo aptent blandit.
+          Placerat arcu dui potenti; nullam taciti taciti amet.
+          </p>
+          <p style= {{fontSize:'15px'}}>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis eros nunc fringilla id rutrum nibh.
+          Orci convallis pulvinar urna fusce at purus neque nam leo? Suspendisse semper facilisi
+          parturient sit euismod placerat. Orci ante luctus praesent torquent orci commodo aptent blandit.
+          Placerat arcu dui potenti; nullam taciti taciti amet.
+          </p>
         </div>
+
+        <div style={{background: 'aliceblue', padding: '15px', width: '400px',position:'relative'}}>
+          <p>
+            <h1 style={{fontSize:"25px"}}>Servicios</h1>
+          </p>
+          <p style= {{fontSize:'15px'}}>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis eros nunc fringilla id rutrum nibh.
+          Orci convallis pulvinar urna fusce at purus neque nam leo? Suspendisse semper facilisi
+          parturient sit euismod placerat. Orci ante luctus praesent torquent orci commodo aptent blandit.
+          Placerat arcu dui potenti; nullam taciti taciti amet.
+          </p>
+          <img src="caja.jpg" style={{"justify-content":"center",width:'250px'}} />
+        </div>
+
+        <div style={{background: 'aliceblue', padding: '15px', width: '400px',position:'relative'}}>
+          <p>
+            <h1 style={{fontSize:"25px"}}>Misión</h1>
+          </p>
+          <p style= {{fontSize:'15px'}}>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis eros nunc fringilla id rutrum nibh.
+          Orci convallis pulvinar urna fusce at purus neque nam leo? Suspendisse semper facilisi
+          parturient sit euismod placerat. Orci ante luctus praesent torquent orci commodo aptent blandit.
+          Placerat arcu dui potenti; nullam taciti taciti amet.
+          </p>
+          <p>
+            <h1 style={{fontSize:"25px"}}>Visión</h1>
+          </p>
+          <p style= {{fontSize:'15px'}}>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis eros nunc fringilla id rutrum nibh.
+          Orci convallis pulvinar urna fusce at purus neque nam leo? Suspendisse semper facilisi
+          parturient sit euismod placerat. Orci ante luctus praesent torquent orci commodo aptent blandit.
+          Placerat arcu dui potenti; nullam taciti taciti amet.
+          </p>
+        </div>
+      </div>
     )
 }
 
