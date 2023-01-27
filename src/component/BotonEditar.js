@@ -34,9 +34,13 @@ const BotonEditar = () =>{
             }
     
             if(puede_seguir==true){
-              
+              axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', { 
+                IdProducto: idNuevoProducto, 
+                'updateKey': 'nombre',
+                'updateValue': nombreProducto
+              });
             alert("Proximamente");
-            document.location.reload();
+            //document.location.reload();
         
             }
             console.log(idNuevoProducto)
@@ -45,7 +49,7 @@ const BotonEditar = () =>{
             console.log(colorProducto)
             
             if(puede_seguir==false){
-                document.location.reload();
+                //document.location.reload();
             }
           }
     

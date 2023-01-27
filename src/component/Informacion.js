@@ -24,11 +24,6 @@ const Informacion = () =>{
           parturient sit euismod placerat. Orci ante luctus praesent torquent orci commodo aptent blandit.
           Placerat arcu dui potenti; nullam taciti taciti amet.
           </p>
-          <p style= {{fontSize:'15px'}}>Lorem ipsum odor amet, consectetuer adipiscing elit. Primis eros nunc fringilla id rutrum nibh.
-          Orci convallis pulvinar urna fusce at purus neque nam leo? Suspendisse semper facilisi
-          parturient sit euismod placerat. Orci ante luctus praesent torquent orci commodo aptent blandit.
-          Placerat arcu dui potenti; nullam taciti taciti amet.
-          </p>
         </div>
 
         <div style={{background: 'aliceblue', padding: '15px', width: '400px',position:'relative'}}>
