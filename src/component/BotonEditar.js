@@ -35,9 +35,7 @@ const BotonEditar = () =>{
     
             if(puede_seguir==true){
 
-              axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', [idNuevoProducto,nombreProducto,precioProducto,colorProducto],idNuevoProducto)
-            alert("Proximamente");
-            
+
         
             }
             console.log(idNuevoProducto)
