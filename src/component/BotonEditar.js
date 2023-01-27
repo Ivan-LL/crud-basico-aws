@@ -34,13 +34,25 @@ const BotonEditar = () =>{
             }
     
             if(puede_seguir==true){
-              axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto', { 
-                IdProducto: idNuevoProducto, 
-                'updateKey': 'nombre',
-                'updateValue': nombreProducto
-              });
-            alert("Proximamente");
-            //document.location.reload();
+              axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto',{
+                "IdProducto":idNuevoProducto,              
+                "updateKey":"nombre",
+                "updateValue":nombreProducto
+              })
+              axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto',{
+                "IdProducto":idNuevoProducto,              
+                "updateKey":"precio",
+                "updateValue":precioProducto
+              })
+              axios.patch('https://hmftk6fuch.execute-api.us-east-1.amazonaws.com/prod/producto',{
+                "IdProducto":idNuevoProducto,              
+                "updateKey":"color",
+                "updateValue":colorProducto
+              })
+
+              alert("Cambios realizados correctamente")
+              document.location.reload()
+
         
             }
             console.log(idNuevoProducto)
