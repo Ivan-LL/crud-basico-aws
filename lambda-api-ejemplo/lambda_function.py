@@ -33,7 +33,7 @@ def lambda_handler(event, context):
         response = saveProduct(json.loads(event['body']))
     elif httpMethod == patchMethod and path == producto:
         requestBody = json.loads(event['body'])
-        response = modifyProduct(str(requestBody['IdProducto'], requestBody['updateKey'], requestBody['updateValue']))
+        response = modifyProduct(requestBody['IdProducto'], requestBody['updateKey'], requestBody['updateValue'])
     elif httpMethod == deleteMethod and path == producto:
         requestBody = json.loads(event['body'])
         response = deleteProduct(requestBody['IdProducto'])
@@ -87,13 +87,37 @@ def saveProduct(requestBody):
 
 def modifyProduct(IdProducto, updateKey, updateValue):
     try:
-        response = table.update_item(
+        if(updateKey=="nombre"):
+            response = table.update_item(
             Key={
                 'IdProducto': IdProducto
             },
-            UpdateExpression='set %s =  :value' % updateKey,
+            UpdateExpression='set %s =  :nombre' % updateKey, 
             ExpressionAttributeValues={
-                'value': updateValue
+                ':nombre': updateValue
+            },
+            ReturnValues='UPDATED_NEW'
+        )
+        if(updateKey=="precio"):
+            response = table.update_item(
+            Key={
+                'IdProducto': IdProducto
+            },
+            UpdateExpression='set %s =  :precio' % updateKey, 
+            ExpressionAttributeValues={
+                ':precio': updateValue
+            },
+            ReturnValues='UPDATED_NEW'
+        )
+        
+        if(updateKey=="color"):
+            response = table.update_item(
+            Key={
+                'IdProducto': IdProducto
+            },
+            UpdateExpression='set %s =  :color' % updateKey, 
+            ExpressionAttributeValues={
+                ':color': updateValue
             },
             ReturnValues='UPDATED_NEW'
         )
